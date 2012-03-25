@@ -1,7 +1,7 @@
 Patryk Ja¿d¿ewski 186507, Informatyka
 Podstawy kryptografii, grupa 1
 
-TECHNOLOGIA:			Java, Java 1.7 Oracle 
+TECHNOLOGIA:		Java, Java 1.7.0_2 Oracle 
 PLATFORAM:			Windows 7 64-bit
 IDE:				NetBeans 7.1
 UWAGI:				
@@ -27,19 +27,20 @@ UWAGI:
 					liter z pliki Ÿród³owego (przed jego zakodowaniem).
 					Program dopisuje, nie zastêpuje, treœæ do plików. 
 ARGUMENTY:
-nazwa		wartoœæ domyœlna znaczenie					
-a=			2				przesuniêcie kodu afinicznego, tj. ax+b
-b=			1				przesuniêcie kodu afinicznego i Cezara
-timesDes=	8				ile rund ma wykonaæ algorytm mini DES
-debug		nie				czy logowaæ fazy dzia³ania algorytmu
-c			tak				kod cezara
-a			nie				kod afiniczny
-v			nie				szyfr Vinegere'a
-x			nie				mini DES
-e			tak				szyfrowanie
-d			nie				odszyfrowywanie
-j			nie				kryptoanaliza z tekstem jawnym
-k			nie				kryptoanaliza baz tekstu jawnego
+nazwa			wartoœæ domyœlna 	znaczenie					
+a=				2					przesuniêcie kodu afinicznego, tj. ax+b
+b=				1					przesuniêcie kodu afinicznego i Cezara
+timesDes		8					ile rund ma wykonaæ algorytm mini DES
+debug			nie					czy logowaæ fazy dzia³ania algorytmu
+c				tak					kod Cezara
+a				nie					kod afiniczny
+v				nie					szyfr Vinegere'a
+x				nie					mini DES
+i				nie					imageDES (na podstawie miniDES'a) - kodowanie w ECB lub CBC
+e				tak					szyfrowanie
+d				nie					odszyfrowywanie
+j				nie					kryptoanaliza z tekstem jawnym
+k				nie					kryptoanaliza baz tekstu jawnego
 plainFile		plain.txt			plik do szyfrowania
 cryptoFile		crypto.txt			plik z zaszyfrowan¹ treœci¹
 decryptFile		decrypt.txt			plik to od szyfrowaniu
@@ -47,6 +48,7 @@ keyFile			key.txt				plik z kluczem
 extraFile		extra.txt			plik stosowany przy kryptoanalizie
 analyzeFile		analyze.txt			w pliku znajd¹ siê informacje o krokach 
 									wykonywanych przez dany algorytm
+blockMode		ECB					tryb szyfru blokowego(nie ka¿dy szyfr wspiera ka¿dy tryb)
 					
 Zadanie 1
 Zrealizowano wszystkie podpunkty. 
@@ -70,3 +72,11 @@ Jeœli chcemy otrzymaæ analizê poszczegolnych kroków algorytmu musimy
 podaæ opcjê "debug=true".
 Wyrazy tekstu do przeksztalcenia (w jedn¹ czy drug¹ stronê) musz¹ byæ oddzielone 
 spacjami- domyslnie tekst wynikowy szyfrowania oddzielony jest znakami nowej linii.
+
+Zadanie 4
+Wszystkie podpunkty zadania zrealizowane.
+Program jako dane dane wejœciowe przyjmuje pliki .jpg nie .bmp
+Pliki wejœciowe powinny byæ w rozmiarze 400x300(wielkorotnoœæ).
+Uruchamiamy w nastepuj¹cy sposób:
+java -jar Krypto.jar e i debug=true timesDES=8 plainFile=plain.jpg blockMode=CBC cryptoFile=crypto.jpg
+ 

@@ -228,7 +228,7 @@ public class H {
 
     /**
      * Tworzy losowy BitSet długości i
-     * @param len
+     * @param len 
      * @return 
      */
     static BitSet randomBitSet(int len) {
